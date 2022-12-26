@@ -1,0 +1,30 @@
+.navbarWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(233, 43, 43);
+    box-shadow: -4px 18px 23px -2px rgba(133,124,124,0.68);
+    height: 2rem;
+    padding: 1.5rem;
+}
+
+.navbarLeft{
+    flex: 1.5;
+}
+
+.navbarRight{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: inherit;
+
+}
+
+.navbarImg{
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
