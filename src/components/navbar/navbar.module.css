@@ -18,7 +18,20 @@
     justify-content: space-around;
     align-items: center;
     height: inherit;
+}
 
+.search{
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.searchIcon{
+    cursor: pointer;
+}
+
+.searchIcon:active{
+    color: gray;
 }
 
 .navbarImg{
