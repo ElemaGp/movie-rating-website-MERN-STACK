@@ -1,11 +1,13 @@
 import style from "./navbar.module.css"
 import React from 'react'
 import { SearchOutlined } from "@mui/icons-material"
+import Sidebar from "../sidebar/Sidebar"
 
 const Navbar = () => {
 
   return (
     <div className={style.navbarWrapper}>
+      <Sidebar />
       <h2 className={style.navbarLeft}>MRating</h2>
       <div className={style.navbarRight}>
         <div className={style.search}>
