@@ -6,6 +6,13 @@ import { MenuOutlined } from "@mui/icons-material";
 
 const Sidebar = () => {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+    const [checked, setChecked] = useState(false);
+
+    console.log(checked);
+
+    const handleChange = (e) =>{
+        setChecked(e.target.checked); /*Getting the value from the "switch" element (note that whenever the switch is switched on, the "checked" prop value is true and whenever it is switched off, the "checked" prop value is false. I'm simply grabbing that value using my own "checked" useState. ) */
+    }
   return (
     <>
     <IconButton size="large" edge="start" color="inherit" aria-label="logo" onClick={()=>setIsDrawerOpen(true)}>
@@ -22,7 +29,7 @@ const Sidebar = () => {
             <Link variant="h5" href="/" underline="hover" sx={{fontWeight:"700"}}>
                 SERIES
             </Link>
-            <Box mt={30}><FormControlLabel  label={<Typography variant="body1" color="primary" sx={{fontWeight:"500"}}>Dark mode</Typography>} control={<Switch />}/></Box>    {/*Getting the value from the "switch" element (note that whenever the switch is switched on, the "checked" prop value is true and whenever it is switched off, the "checked" prop value is false. I'm simply grabbing that value using my own "checked" useState. ) */}
+            <Box mt={30}><FormControlLabel  label={<Typography variant="body1" color="primary" sx={{fontWeight:"500"}}>Dark mode</Typography>} control={<Switch checked={checked} onChange={handleChange}/>}/></Box>    {/*Getting the value from the "switch" element (note that whenever the switch is switched on, the "checked" prop value is true and whenever it is switched off, the "checked" prop value is false. I'm simply grabbing that value using my own "checked" useState using the handleChange function. ) */}
             
         </Stack>
         </Drawer>
