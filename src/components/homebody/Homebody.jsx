@@ -6,14 +6,14 @@ const Homebody = () => {
   return (
     <div className={style.homebodyWrapper}>
         <div className={style.homebodyMovies}>
-            <h2>MOVIES</h2>
+            <h1>MOVIES</h1>
             <div className={style.moviesList}>
                 {
                   movies.map((movie)=>(
                     <div className={style.eachMovie} key={movie.id}>
-                      <img src={movie.image} alt="moviepic" />
+                      <img src={movie.image} alt="moviepic" className={style.movieImg}/>
                       <h2>{movie.title}</h2>
-                      <p>{movie.desc}</p>
+                      <p className={style.movieDesc}>{movie.desc}</p>
                     </div>
                   ))
                 }

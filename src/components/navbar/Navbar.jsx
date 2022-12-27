@@ -11,7 +11,7 @@ const Navbar = () => {
       <h2 className={style.navbarLeft}>MRating</h2>
       <div className={style.navbarRight}>
         <div className={style.search}>
-            <input type="text" style={{outline:"none", border:"none"}}/>
+            <input type="text" style={{outline:"none", border:"none"}} placeholder="search..."/>
             <SearchOutlined className={style.searchIcon}/>
         </div>
             <img 
