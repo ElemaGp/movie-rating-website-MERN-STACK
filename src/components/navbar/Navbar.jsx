@@ -19,7 +19,7 @@ const Navbar = () => {
             alt="" 
             className={style.navbarImg}
             />
-        <button>LOGOUT</button>  {/*convert to reusable button later */}
+        <span className={style.logoutbtn}>LOGOUT</span>  {/*convert to reusable button later */}
       </div>
     </div>
   )

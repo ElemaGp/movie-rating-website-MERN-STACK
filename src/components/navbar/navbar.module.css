@@ -41,3 +41,34 @@
     object-fit: cover;
     cursor: pointer;
 }
+
+.logoutbtn{
+    background-color:rgb(112, 113, 212);
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/*============== MEDIA QUERIES (MEDIUM DEVICES) ie. tablets ============= */
+@media screen and (max-width: 1024px) {
+
+    .navbarRight{
+        gap: 20px
+    }
+
+}
+
+
+/*============== MEDIA QUERIES (SMALL DEVICES) ie. phones ============= */
+@media screen and (max-width: 600px) {
+
+    .navbarRight{
+        gap: 12px
+    }
+    
+    .logoutbtn {
+        display: none;
+    
+    }
+}
