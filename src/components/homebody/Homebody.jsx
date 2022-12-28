@@ -48,17 +48,32 @@ const Homebody = () => {
         </div>
         <div className={style.homebodyCover}>
             <h1 className={style.homebodyText}>SERIES</h1>
-            <div className={style.homebodyList}>
+            <Swiper 
+            className={style.homebodyList}
+            // install Swiper modules
+            modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+            spaceBetween={50}
+            slidesPerView={3}
+            navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            autoplay = {{
+              delay: 2500,
+              disableOnInteraction: false,
+              }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log('slide change')}
+            >
             {
                   series.map((serie)=>(
-                    <div className={style.eachMovie} key={serie.id}>
+                    <SwiperSlide className={style.eachMovie} key={serie.id}>
                       <img src={serie.image} alt="moviepic" className={style.movieImg}/>
                       <h2>{serie.title}</h2>
                       <p className={style.movieDesc}>{serie.desc}</p>
-                    </div>
+                    </SwiperSlide>
                   ))
                 }
-            </div>
+            </Swiper>
         </div>
     </div>
   )
