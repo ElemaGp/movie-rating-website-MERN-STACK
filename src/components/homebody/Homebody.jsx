@@ -12,8 +12,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+
+
+import useWindowSize from "../../useWindowSize";
 // import 'swiper/css/bundle';
+
 const Homebody = () => {
+
+  const size = useWindowSize();
 
   return (
     <div className={style.homebodyWrapper}>
@@ -24,7 +30,7 @@ const Homebody = () => {
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
             spaceBetween={50}
-            slidesPerView={3}
+            slidesPerView={size.width <= 600 ? 1 : 3}
             navigation
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
@@ -53,7 +59,7 @@ const Homebody = () => {
             // install Swiper modules
             modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
             spaceBetween={50}
-            slidesPerView={3}
+            slidesPerView={size.width <= 600 ? 1 : 3}
             navigation
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
