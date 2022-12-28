@@ -1,6 +1,8 @@
+
+
 .homebodyText{
     /* text-align: center; */
-    margin: 1rem auto;
+    margin: 1.5rem auto;
     /* margin-top: 1rem; */
     background-color: rgb(112, 113, 212);
     padding: 1rem;
@@ -12,10 +14,15 @@
 
 .homebodyList{
     display: flex;
+    width: 95vw;
+    overflow: hidden;
+    padding-bottom: 3rem;
 }
 
 .eachMovie{
-    margin: 0 6px;
+    /* margin: 0 6px; */
+    cursor: pointer;
+
 }
 
 .movieImg{
@@ -36,3 +43,7 @@
    -webkit-box-orient: vertical;
 }
 
+:root {
+    --swiper-navigation-size: 70px;
+    --swiper-navigation-color: rgb(112, 113, 212);
+  }
