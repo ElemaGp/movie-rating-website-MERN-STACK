@@ -11,13 +11,26 @@
 }
 
 .formField{
-    width: 60vw;
+    width: 40rem;
     height: 1.5rem;
 }
 
 .invalid {
     border-color: red;
-    width: 60vw;
+    width: 40rem;
     height: 1.5rem;
   }
+
+  /*============== MEDIA QUERIES (MEDIUM DEVICES) ie. tablets ============= */
+@media screen and (max-width: 1024px) {
+
+    .formField, .invalid{
+        width: 60vw;
+    }
+
+}
+
+
+
+
 

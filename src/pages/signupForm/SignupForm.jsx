@@ -30,6 +30,8 @@ function SignupForm () {
   }
 
   return (
+    
+    
     <Formik
       initialValues={initialValues}
       validationSchema={validationSchema}
@@ -38,6 +40,7 @@ function SignupForm () {
       {formik => {
         return (
           <Form className={style.formContainer}>
+            <h1 className={style.signupText}>SIGN UP</h1>
             <FormikControl
               control='input'
               // control='chakraInput'
@@ -69,11 +72,12 @@ function SignupForm () {
               label='Confirm Password'
               name='confirmPassword'    //the "name's" value has to match with the initial value's name above.
             />
-            <button type='submit' disabled={!formik.isValid} className={style.btn}>Submit</button> {/*"formik.isValid is false whenever there is an error" */}
+            <button type='submit' disabled={!formik.isValid} className={style.btn}>Sign Up</button> {/*"formik.isValid is false whenever there is an error" */}
           </Form>
         )
       }}
     </Formik>
+    
   )
 }
 

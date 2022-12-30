@@ -5,6 +5,10 @@
     justify-content: center;
 }
 
+.signupText{
+    align-self: center;
+}
+
 .btn{
     background-color: teal;
     color: white;
