@@ -37,7 +37,7 @@ function SignupForm () {
     >
       {formik => {
         return (
-          <Form>
+          <Form className={style.formContainer}>
             <FormikControl
               control='input'
               // control='chakraInput'
@@ -47,7 +47,7 @@ function SignupForm () {
             />
             <FormikControl
               control='input'
-              type='password'
+              type='text'
               label='Last Name'
               name='lastName'    //the "name's" value has to match with the initial value's name above.
             />
@@ -69,7 +69,7 @@ function SignupForm () {
               label='Confirm Password'
               name='confirmPassword'    //the "name's" value has to match with the initial value's name above.
             />
-            <button type='submit' disabled={!formik.isValid}>Submit</button> {/*"formik.isValid is false whenever there is an error" */}
+            <button type='submit' disabled={!formik.isValid} className={style.btn}>Submit</button> {/*"formik.isValid is false whenever there is an error" */}
           </Form>
         )
       }}

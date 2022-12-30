@@ -1,0 +1,23 @@
+
+.formControl{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.formLabelAndFieldAndError{
+    display: flex;
+    flex-direction: column;
+}
+
+.formField{
+    width: 60vw;
+    height: 1.5rem;
+}
+
+.invalid {
+    border-color: red;
+    width: 60vw;
+    height: 1.5rem;
+  }
+

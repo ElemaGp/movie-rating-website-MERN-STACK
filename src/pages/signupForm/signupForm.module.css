@@ -1,0 +1,18 @@
+.formContainer{
+    height: 97vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.btn{
+    background-color: teal;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    width: max-content;
+    border: none;
+    margin: 10px auto 0;
+    cursor: pointer;
+    
+}
