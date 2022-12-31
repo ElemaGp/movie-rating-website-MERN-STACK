@@ -7,7 +7,7 @@ function MuiInput(props) {
     const { label, name, type, error, helperText, ...rest } = props
   return (
     <div>
-        <Field as={TextField} name={name} type={name}  variant="outlined" color="primary" label={label} sx={{width: "50vw"}} error={error} helperText={helperText}/>
+        <Field as={TextField} name={name} type={name}  variant="outlined" color="primary" label={label} sx={{width: {xs: 250, sm: 500}}} error={error} helperText={helperText}/>
     </div>
   )
 }
