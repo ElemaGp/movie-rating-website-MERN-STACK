@@ -1,0 +1,36 @@
+
+.formControl{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.formLabelAndFieldAndError{
+    display: flex;
+    flex-direction: column;
+}
+
+.formField{
+    width: 40rem;
+    height: 1.5rem;
+}
+
+.invalid {
+    border-color: red;
+    width: 40rem;
+    height: 1.5rem;
+  }
+
+  /*============== MEDIA QUERIES (MEDIUM DEVICES) ie. tablets ============= */
+@media screen and (max-width: 1024px) {
+
+    .formField, .invalid{
+        width: 60vw;
+    }
+
+}
+
+
+
+
+
