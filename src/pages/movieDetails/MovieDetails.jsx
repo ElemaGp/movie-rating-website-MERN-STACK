@@ -1,9 +1,15 @@
 import style from "./movieDetails.module.css"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 import { Button, Rating, Stack } from "@mui/material"
-import { toast, ToastContainer } from "react-toastify"
+import * as Yup from 'yup'
+import { Form, Formik } from "formik"
+import FormikControl from "../../components/formikComponents/FormikControl"
+
+//toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const MovieDetails = () => {
@@ -11,12 +17,13 @@ const MovieDetails = () => {
     
     const handleChange = (e) =>{
         setRatingValue(e.target.value);
-        notify();
+        
     }
 
+    //toastify
     const notify = () => {
         toast.success("Thanks for your feedback!", {     
-            position: "top-right",
+            position: "top-center",
             autoClose: 3000,
             hideProgressBar: true,
             closeOnClick: true,
@@ -27,7 +34,15 @@ const MovieDetails = () => {
         }); 
     }
 
-    const movieDeets = [
+    useEffect(()=>{
+        console.log(ratingValue);
+        notify();
+    },[ratingValue])
+
+    
+
+    //dummy movie data
+    const movieDeets = 
         {
             id: 1,
             image: "https://s3.amazonaws.com/static.rogerebert.com/uploads/review/primary_image/reviews/whitney-houston-i-wanna-dance-with-somebody-movie-review-2022/i-wanna-dance-with-somebody-movie-review-2022.jpeg",
@@ -51,7 +66,22 @@ const MovieDetails = () => {
                 }
         ]
         }
-      ]
+
+    //formik
+    const initialValues = {
+        comment: '',
+        }
+
+    
+    const validationSchema = Yup.object({
+        comment: Yup.string().required("Comment cannot be empty").min(4, "Comment must contain at least 4 letters"),
+        })
+
+    const onSubmit = (values, formikHelpers) => {
+        console.log('Form data', values)
+        formikHelpers.resetForm();
+        }
+      
 
   return (
     <div className={style.movieDetailsContainer}>
@@ -62,10 +92,33 @@ const MovieDetails = () => {
         <Stack spacing={2}>
             <Rating value={ratingValue} onChange={handleChange}/>
         </Stack>
-        <form>
-            <textarea name="" id="" cols="30" rows="10" />
-            <Button type="submit" variant="contained" color="primary" size="large" >Sign Up</Button>
-        </form>
+        <Formik
+      initialValues={initialValues}
+      validationSchema={validationSchema}
+      onSubmit={onSubmit}
+    >
+      {formik => {
+        return (
+          <Form className={style.formContainer}>
+            <h1 className={style.signupText}>SIGN UP</h1>
+            <FormikControl
+              control='MuiTextarea'
+              // control='chakraInput'
+              type='textarea'
+              label='Add a feedback'
+              name='comment'    //the "name" has to match with the initial value and validation's name (key) above.
+              error={Boolean(formik.errors.comment) && Boolean(formik.touched.comment)} //if both "formik.errors" and "formik.touched" are true, then the "error" prop is true.
+              helperText={Boolean(formik.touched.comment) && formik.errors.comment} //if "formik.touched.firstName" is true, then display the "formik.errors" associated with the "firstName".
+            />
+            {/* <button type='submit' disabled={!formik.isValid} className={style.btn}>Sign Up</button> "formik.isValid is false whenever there is an error" */}
+            <Button type="submit" variant="contained" color="primary" size="large" disabled={!formik.dirty || !formik.isValid}>Sign Up</Button>
+          </Form>
+        )
+      }}
+    </Formik>
+    
+            
+        
         <h2></h2>
         <p>rating start mui</p>
         <p></p>

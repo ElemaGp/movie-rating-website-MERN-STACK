@@ -1,11 +1,11 @@
-//I'm using this "MuiInput.jsx" component instead of this "input.jsx" component, because this Muiinput component uses Material-ui library which helps me style the form better, especially for error state. (So the components being used for the form is MuiInput.jsx, FormikControl.jsx and SignupForm.jsx)
+
 
 import React from 'react'
 import {Field} from 'formik'
 import { TextField } from '@mui/material'
 
 
-function MuiInput(props) {
+function MuiTextarea(props) {
     const { label, name, type, error, helperText, ...rest } = props
   return (
     <div>
@@ -14,4 +14,4 @@ function MuiInput(props) {
   )
 }
 
-export default MuiInput
+export default MuiTextarea
