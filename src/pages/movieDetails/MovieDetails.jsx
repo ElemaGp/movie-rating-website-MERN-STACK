@@ -17,7 +17,7 @@ const MovieDetails = () => {
     
     const handleChange = (e) =>{
         setRatingValue(e.target.value);
-        
+        notify();
     }
 
     //toastify
@@ -36,7 +36,6 @@ const MovieDetails = () => {
 
     useEffect(()=>{
         console.log(ratingValue);
-        notify();
     },[ratingValue])
 
     
@@ -107,6 +106,8 @@ const MovieDetails = () => {
               type='textarea'
               label='Add a feedback'
               name='comment'    //the "name" has to match with the initial value and validation's name (key) above.
+              rows="6"
+              maxRows="Infinity"
               error={Boolean(formik.errors.comment) && Boolean(formik.touched.comment)} //if both "formik.errors" and "formik.touched" are true, then the "error" prop is true.
               helperText={Boolean(formik.touched.comment) && formik.errors.comment} //if "formik.touched.firstName" is true, then display the "formik.errors" associated with the "firstName".
             />
