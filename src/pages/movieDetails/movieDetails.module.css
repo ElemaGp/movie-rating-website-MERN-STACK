@@ -1,0 +1,36 @@
+.movieDetailsContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.movieDetailsBody{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+    width: 70vw;
+    align-self: center;
+}
+
+.formContainer{
+    text-align: center;
+}
+
+.movieDetailsImg{
+    width: 40rem;
+    object-fit: cover;
+}
+
+.commentContainer{
+    margin-top: 70px;
+}
+
+.commentWrapper{
+    margin: 16px 0;
+}
+
+.commentNameAndRating{
+    display: flex;
+    gap: 7px;
+}
