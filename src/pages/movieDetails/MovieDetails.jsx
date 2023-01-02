@@ -89,7 +89,7 @@ const MovieDetails = () => {
     <div className={style.movieDetailsContainer}>
       <Navbar />
       <div className={style.movieDetailsBody}>
-        <img src={movieDeets.image} alt="img" />
+        <img src={movieDeets.image} alt="img" className={style.movieDetailsImg}/>
         <p>{movieDeets.desc}</p>
         <Stack spacing={2}>
             <Rating value={ratingValue} onChange={handleChange}/>
@@ -102,7 +102,6 @@ const MovieDetails = () => {
       {formik => {
         return (
           <Form className={style.formContainer}>
-            <h1 className={style.signupText}>SIGN UP</h1>
             <FormikControl
               control='MuiTextarea'
               // control='chakraInput'
@@ -122,22 +121,26 @@ const MovieDetails = () => {
     </Formik>
     
             
-        
-  {
-      movieDeets.comments.map((comment)=>(
-        <div className={style.eachMovie} key={comment.id}>
-          <h2>{comment.name}</h2>
-          <Stack spacing={2}>
-            <Rating value={comment.rating} onChange={handleChange}/>
-        </Stack>
-          <p className={style.movieDesc}>{comment.comment}</p>
-        </div>
-      ))
-    }
+  <div className={style.commentContainer}>
+    {
+        movieDeets.comments.map((comment)=>(
+          <div className={style.commentWrapper} key={comment.id}>
+            <div className={style.commentNameAndRating}>
+              <h3>{comment.name}</h3>
+              <Stack spacing={2}>
+                <Rating value={comment.rating} onChange={handleChange} readOnly />
+              </Stack>
+            </div>
+              <p className={style.movieDesc}>{comment.comment}</p>
+          </div>
+        ))
+      }
+    </div>
 
       </div>
       
       <ToastContainer /> {/*you can also style this toast container component if you want it to affect all the toast alerts in this component (unless you then style that alert seperately) */}
+          
     </div>
   )
 }
