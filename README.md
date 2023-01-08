@@ -8,7 +8,7 @@ I used swiperjs for the slider on (Homebody) component.
 
 ## Map
 
-I mapped through the movie data in the (Homebody) component
+I mapped through the movie data in the (Homebody) component. And movieDetails component.
 
 ## Js display by screen size
 
